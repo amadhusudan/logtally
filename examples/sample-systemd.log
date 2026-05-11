@@ -1,0 +1,30 @@
+Apr 29 08:59:58 web01 systemd[1]: Starting myapp.service - My Application Server...
+Apr 29 09:00:01 web01 systemd[1]: Started myapp.service - My Application Server.
+Apr 29 09:00:01 web01 myapp[1234]: app.boot starting service on port 8080
+Apr 29 09:00:02 web01 myapp[1234]: app.boot server is running, listening on 0.0.0.0:8080
+Apr 29 09:00:45 web01 sshd[2877]: Accepted publickey for deploy from 10.0.1.5 port 51022 ssh2
+Apr 29 09:01:14 web01 myapp[1234]: app.cache key expired, refetching from origin
+Apr 29 09:02:33 web01 myapp[1234]: ERROR app.db deadlock detected while updating orders table; retrying
+Apr 29 09:02:34 web01 myapp[1234]: app.db retrying transaction (attempt 2/3)
+Apr 29 09:05:01 web01 sshd[2901]: Failed password for invalid user admin from 192.0.2.10 port 51234 ssh2
+Apr 29 09:05:12 web01 sshd[2901]: authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.0.2.10
+Apr 29 09:07:44 web01 myapp[1234]: ERROR app.http GET /api/orders 500 12ms upstream timed out
+Apr 29 09:10:00 web01 kernel: [12345.678901] Out of memory: Killed process 1234 (myapp) total-vm:2048000kB, anon-rss:1900000kB
+Apr 29 09:10:00 web01 systemd[1]: myapp.service: Main process exited, code=killed, status=9/KILL
+Apr 29 09:10:00 web01 systemd[1]: myapp.service: Failed with result 'signal'.
+Apr 29 09:10:01 web01 systemd[1]: myapp.service: Scheduled restart job, restart counter is at 1.
+Apr 29 09:10:01 web01 systemd[1]: Stopped myapp.service - My Application Server.
+Apr 29 09:10:02 web01 systemd[1]: Starting myapp.service - My Application Server...
+Apr 29 09:10:05 web01 systemd[1]: Started myapp.service - My Application Server.
+Apr 29 09:10:05 web01 myapp[2050]: app.boot starting service on port 8080
+Apr 29 09:10:06 web01 myapp[2050]: app.boot server is running, listening on 0.0.0.0:8080
+Apr 29 09:25:00 web01 sudo[4002]: pam_unix(sudo:auth): authentication failure; user=bob tty=pts/0 ruser=bob
+Apr 29 10:00:00 web01 CRON[5001]: (root) CMD (/usr/local/bin/backup.sh)
+Apr 29 10:00:30 web01 backup.sh[5002]: backup completed successfully, archive size=2.3GB
+Apr 29 10:45:11 web01 myapp[2050]: rate limit exceeded for client_id=abc123, throttled
+Apr 29 11:30:18 web01 myapp[2050]: GET /api/legacy/endpoint 404 2ms
+Apr 29 12:09:55 web01 systemd[1]: Received SIGTERM from PID 1 (systemd).
+Apr 29 12:10:01 web01 systemd[1]: Stopping myapp.service - My Application Server...
+Apr 29 12:10:01 web01 myapp[2050]: app.shutdown received signal, shutting down
+Apr 29 12:10:02 web01 systemd[1]: myapp.service: Deactivated successfully.
+Apr 29 12:10:02 web01 systemd[1]: Stopped myapp.service - My Application Server.

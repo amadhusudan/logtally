@@ -1,0 +1,101 @@
+# Default pattern set for logtally.
+#
+# Each pattern has:
+#   name        - short identifier shown in reports
+#   regex       - case-insensitive Python regex (re.IGNORECASE applied)
+#   severity    - one of: info, warn, error, critical
+#   description - optional one-line context shown in reports
+#
+# Patterns are tried independently; one line can match multiple patterns.
+#
+# Override this file by passing --config /path/to/your.yaml
+
+patterns:
+  # ---- critical ----
+  - name: out_of_memory
+    regex: "out of memory|OOMKilled|MemoryError|Cannot allocate memory"
+    severity: critical
+    description: "Process killed or refused allocation due to memory pressure"
+
+  - name: segfault
+    regex: "segmentation fault|core dumped|SIGSEGV"
+    severity: critical
+    description: "Native crash"
+
+  - name: panic
+    regex: "\\bpanic\\b|fatal error|fatal:|UNRECOVERABLE"
+    severity: critical
+    description: "Process panic or unrecoverable failure"
+
+  # ---- error ----
+  - name: exception_traceback
+    regex: "Traceback \\(most recent call last\\)|Exception in thread"
+    severity: error
+    description: "Python or Java traceback marker"
+
+  - name: http_5xx
+    regex: " 5\\d{2} "
+    severity: error
+    description: "HTTP 5xx response status"
+
+  - name: connection_refused
+    regex: "connection refused|ECONNREFUSED"
+    severity: error
+    description: "TCP connection refused by remote"
+
+  - name: connection_timeout
+    regex: "connection timed? ?out|ETIMEDOUT|read timed out"
+    severity: error
+    description: "Network or read timeout"
+
+  - name: db_error
+    regex: "deadlock|integrity ?error|sqlstate|ORA-\\d+|duplicate key|constraint violation"
+    severity: error
+    description: "Database error"
+
+  - name: auth_failure
+    regex: "authentication failed|invalid credentials|unauthorized|permission denied|access denied"
+    severity: error
+    description: "Failed authentication or authorization"
+
+  - name: generic_error
+    regex: "\\bERROR\\b|\\bERR\\b|\\[error\\]"
+    severity: error
+    description: "Generic error-level log line"
+
+  # ---- warn ----
+  - name: http_4xx
+    regex: " 4\\d{2} "
+    severity: warn
+    description: "HTTP 4xx response status"
+
+  - name: rate_limit
+    regex: "rate limit|throttled|429 too many"
+    severity: warn
+    description: "Request was rate limited"
+
+  - name: deprecated
+    regex: "deprecat(ed|ion)|DeprecationWarning"
+    severity: warn
+    description: "Use of deprecated API"
+
+  - name: retry
+    regex: "retry(ing)?|retr(y|ies) exhausted|will retry"
+    severity: warn
+    description: "Operation was retried"
+
+  - name: generic_warning
+    regex: "\\bWARN(ING)?\\b|\\[warn(ing)?\\]"
+    severity: warn
+    description: "Generic warning-level log line"
+
+  # ---- info ----
+  - name: startup
+    regex: "starting|started|listening on|server is running|booted in"
+    severity: info
+    description: "Service startup signal"
+
+  - name: shutdown
+    regex: "shutting down|shutdown complete|stopped|received signal"
+    severity: info
+    description: "Service shutdown signal"

@@ -1,0 +1,15 @@
+Apr 29 09:00:01 web01 app[1234]: INFO app.boot starting service on port 8080
+Apr 29 09:00:02 web01 app[1234]: INFO app.boot server is running, listening on 0.0.0.0:8080
+Apr 29 09:00:18 web01 app[1234]: INFO app.http POST /api/orders 201 41ms
+Apr 29 09:01:14 web01 app[1234]: WARN app.cache key expired, refetching from origin
+Apr 29 09:02:33 web01 app[1234]: ERROR app.db deadlock detected while updating orders table; retrying
+Apr 29 09:02:33 web01 app[1234]: WARN app.db retrying transaction (attempt 2/3)
+Apr 29 09:05:01 web01 app[1234]: ERROR app.auth authentication failed for user=bob@example.com reason=invalid_credentials
+Apr 29 09:05:12 web01 app[1234]: ERROR app.auth authentication failed for user=bob@example.com reason=invalid_credentials
+Apr 29 09:07:44 web01 app[1234]: ERROR app.http GET /api/orders 500 12ms upstream timeout
+Apr 29 09:10:00 web01 kernel: Out of memory: Killed process 1234 (app)
+Apr 29 09:10:05 web01 systemd[1]: app.service: main process exited, code=killed
+Apr 29 09:10:30 web01 app[2050]: INFO app.boot starting service on port 8080
+Apr 29 09:11:01 web01 app[2050]: INFO app.boot server is running, listening on 0.0.0.0:8080
+Apr 29 09:20:18 web01 app[2050]: WARN app.http GET /api/legacy/endpoint 404 2ms
+Apr 29 12:10:01 web01 app[2050]: INFO app.shutdown received signal, shutting down

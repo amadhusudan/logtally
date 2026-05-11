@@ -1,0 +1,55 @@
+2026-04-29 09:00:01 INFO  app.boot starting service on port 8080
+2026-04-29 09:00:01 INFO  app.boot loaded config from /etc/app/app.yaml
+2026-04-29 09:00:02 INFO  app.boot server is running, listening on 0.0.0.0:8080
+2026-04-29 09:00:03 INFO  app.http GET /healthz 200 1ms
+2026-04-29 09:00:15 INFO  app.http GET /api/users 200 23ms
+2026-04-29 09:00:18 INFO  app.http POST /api/orders 201 41ms
+2026-04-29 09:01:02 WARN  app.cache key expired, refetching from origin
+2026-04-29 09:01:14 INFO  app.http GET /api/orders/9182 200 19ms
+2026-04-29 09:02:33 ERROR app.db deadlock detected while updating orders table; retrying
+2026-04-29 09:02:33 WARN  app.db retrying transaction (attempt 2/3)
+2026-04-29 09:02:34 INFO  app.db transaction succeeded after retry
+2026-04-29 09:04:01 INFO  app.http GET /api/users/me 200 8ms
+2026-04-29 09:04:55 WARN  app.http GET /api/legacy/endpoint 404 2ms
+2026-04-29 09:05:01 ERROR app.auth authentication failed for user=bob@example.com reason=invalid_credentials
+2026-04-29 09:05:12 ERROR app.auth authentication failed for user=bob@example.com reason=invalid_credentials
+2026-04-29 09:05:23 ERROR app.auth authentication failed for user=bob@example.com reason=invalid_credentials
+2026-04-29 09:05:24 WARN  app.security rate limit triggered for ip=10.2.3.4
+2026-04-29 09:07:11 INFO  app.http GET /api/products 200 12ms
+2026-04-29 09:09:42 ERROR app.http POST /api/checkout 503 1042ms upstream connection refused
+2026-04-29 09:09:43 ERROR app.http POST /api/checkout 503 1051ms upstream connection refused
+2026-04-29 09:09:45 ERROR app.http POST /api/checkout 503 1133ms upstream connection refused
+2026-04-29 09:10:01 ERROR app.payments Traceback (most recent call last):
+2026-04-29 09:10:01 ERROR app.payments   File "/app/payments.py", line 88, in charge
+2026-04-29 09:10:01 ERROR app.payments     raise PaymentError("Gateway timeout")
+2026-04-29 09:10:01 ERROR app.payments PaymentError: Gateway timeout
+2026-04-29 09:11:15 INFO  app.http GET /healthz 200 1ms
+2026-04-29 09:14:30 WARN  app.api DeprecationWarning: /v1/orders is deprecated, use /v2/orders
+2026-04-29 09:15:02 INFO  app.http POST /api/orders 201 38ms
+2026-04-29 09:18:44 ERROR app.cache connection refused to redis://cache:6379
+2026-04-29 09:18:45 WARN  app.cache falling back to in-process cache (degraded mode)
+2026-04-29 09:22:11 INFO  app.http GET /api/orders 200 15ms
+2026-04-29 09:30:01 ERROR app.scheduler job=daily_rollup failed: connection timed out after 30s
+2026-04-29 09:30:01 WARN  app.scheduler will retry job=daily_rollup in 5m
+2026-04-29 09:35:14 ERROR app.scheduler job=daily_rollup failed: connection timed out after 30s
+2026-04-29 09:35:14 WARN  app.scheduler retries exhausted for job=daily_rollup
+2026-04-29 09:38:02 CRITICAL app.system out of memory; killing worker pid=4011
+2026-04-29 09:38:03 ERROR app.supervisor worker pid=4011 exited with code -9
+2026-04-29 09:38:03 INFO  app.supervisor restarting worker
+2026-04-29 09:38:05 INFO  app.boot starting service on port 8080
+2026-04-29 09:38:06 INFO  app.boot server is running, listening on 0.0.0.0:8080
+2026-04-29 09:42:00 INFO  app.http GET /api/users 200 21ms
+2026-04-29 09:45:11 WARN  app.http GET /api/missing-thing 404 3ms
+2026-04-29 09:50:19 ERROR app.payments PaymentError: card declined; user=alice@example.com
+2026-04-29 09:55:00 INFO  app.http POST /api/orders 201 44ms
+2026-04-29 10:02:33 WARN  app.api DeprecationWarning: legacy auth flow will be removed in v3
+2026-04-29 10:10:08 INFO  app.http GET /api/products 200 9ms
+2026-04-29 10:15:51 ERROR app.http GET /api/users/9999 404 4ms user_not_found
+2026-04-29 10:30:00 INFO  app.cron daily_summary completed in 1.4s
+2026-04-29 10:45:22 WARN  app.security suspicious login pattern from ip=203.0.113.42
+2026-04-29 11:00:00 INFO  app.http GET /healthz 200 1ms
+2026-04-29 11:15:33 ERROR app.db ORA-00942: table or view does not exist
+2026-04-29 11:33:09 INFO  app.http POST /api/orders 201 39ms
+2026-04-29 11:55:42 WARN  app.api throttled request from client_id=external-partner-7
+2026-04-29 12:10:01 INFO  app.scheduler shutting down for maintenance
+2026-04-29 12:10:01 INFO  app.boot shutdown complete

@@ -1,0 +1,15 @@
+{"ts":"2026-04-29T09:00:01.234Z","level":"info","logger":"app.boot","msg":"starting service","port":8080}
+{"ts":"2026-04-29T09:00:02.512Z","level":"info","logger":"app.boot","msg":"server is running, listening on 0.0.0.0:8080"}
+{"ts":"2026-04-29T09:00:18.001Z","level":"info","logger":"app.http","msg":"request","method":"POST","path":"/api/orders","status":201,"duration_ms":41}
+{"ts":"2026-04-29T09:01:14.882Z","level":"warn","logger":"app.cache","msg":"key expired, refetching from origin","key":"users:42"}
+{"ts":"2026-04-29T09:02:33.110Z","level":"error","logger":"app.db","msg":"deadlock detected; retrying","table":"orders","attempt":1}
+{"ts":"2026-04-29T09:02:34.020Z","level":"warn","logger":"app.db","msg":"retrying transaction","attempt":2,"max":3}
+{"ts":"2026-04-29T09:05:01.443Z","level":"error","logger":"app.auth","msg":"authentication failed","user":"bob@example.com","reason":"invalid_credentials"}
+{"ts":"2026-04-29T09:05:12.901Z","level":"error","logger":"app.auth","msg":"authentication failed","user":"bob@example.com","reason":"invalid_credentials"}
+{"ts":"2026-04-29T09:07:44.213Z","level":"error","logger":"app.http","msg":"upstream request failed","method":"GET","path":"/api/orders","status":500,"upstream":"orders-svc","error":"connection refused"}
+{"ts":"2026-04-29T09:10:00.000Z","level":"critical","logger":"app.runtime","msg":"out of memory: heap exceeded limit","heap_mb":2048,"limit_mb":2000}
+{"ts":"2026-04-29T09:10:30.100Z","level":"info","logger":"app.boot","msg":"starting service","port":8080}
+{"ts":"2026-04-29T09:20:18.770Z","level":"warn","logger":"app.http","msg":"request","method":"GET","path":"/api/legacy/endpoint","status":404,"duration_ms":2}
+{"ts":"2026-04-29T10:45:11.222Z","level":"warn","logger":"app.api","msg":"rate limit exceeded","client_id":"abc123","limit":100,"window":"1m"}
+{"ts":"2026-04-29T11:30:05.500Z","level":"warn","logger":"app.api","msg":"DeprecationWarning: /api/v1 will be removed in 2026-06","caller":"client_xyz"}
+{"ts":"2026-04-29T12:10:01.999Z","level":"info","logger":"app.shutdown","msg":"received signal, shutting down"}
