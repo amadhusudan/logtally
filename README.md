@@ -5,7 +5,7 @@ Memory-efficient (handles files larger than RAM), zero-config for common pattern
 
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Tests](https://img.shields.io/badge/tests-35%20passing-brightgreen.svg)](#testing)
+[![Tests](https://github.com/amadhusudan/logtally/actions/workflows/tests.yml/badge.svg)](https://github.com/amadhusudan/logtally/actions/workflows/tests.yml)
 
 ---
 
@@ -178,7 +178,7 @@ pip install -e ".[dev]"
 pytest -v
 ```
 
-35 tests covering pattern compilation, severity filtering, line streaming (including encoding edge cases), aggregation logic, timestamp parsing (ISO, yearless syslog, and Apache/nginx formats), and output formatting.
+Tests cover pattern compilation, severity filtering, line streaming (including encoding edge cases), aggregation logic, timestamp parsing (ISO, yearless syslog, and Apache/nginx formats), and output formatting. CI runs the suite against Python 3.9-3.12 on every push and pull request.
 
 ## Roadmap
 
